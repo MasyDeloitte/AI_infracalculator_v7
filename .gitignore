@@ -1,0 +1,32 @@
+
+# Generated dependencies and environments
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.vite/
+**/dist/
+**/build/
+**/coverage/
+**/.pytest_cache/
+**/*.pyc
+
+# Local environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local reference versions and downloaded packages
+WebApp_Code/Old_refversions/
+WebApp_Code/*.zip
+
+# Temporary Microsoft Office files
+~$*
+**/~$*
+
+# Logs and editor files
+**/*.log
+**/.vscode/
+**/.idea/
+**/venv/
+GitIgnore_Backups/
+SAFE_CLEANUP_REPORT.txt

@@ -1,0 +1,15 @@
+{
+  "name": "ai-infrastructure-sizing-platform",
+  "private": true,
+  "version": "0.3.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "setup": "npm install",
+    "dev": "npm run dev --workspace=@ai-sizing/web",
+    "build": "npm run build --workspace=@ai-sizing/web",
+    "check": "npm run check --workspace=@ai-sizing/web",
+    "test": "npm run test --workspace=@ai-sizing/web"
+  }
+}

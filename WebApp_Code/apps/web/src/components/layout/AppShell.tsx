@@ -1,0 +1,6 @@
+import type { ReactNode } from 'react';
+import { Brand } from './Brand';
+import { UdevBadge } from '../status/UdevBadge';
+import type { Page } from '@/app/types';
+import { notifyUnderDevelopment } from '@/app/notifications';
+export function AppShell({page,setPage,children}:{page:Page,setPage:(p:Page)=>void,children:ReactNode}){const nav=["Dashboard","Projects","Scenarios","Inputs","Calculations","Model Selection","Infrastructure","BOM & Financials","Catalogs","Approvals","Audit Trail","Reports"];return <div className="shell"><aside><Brand/><p className="nav-label">WORKSPACE</p>{nav.map(n=>{const ready=n==="Inputs"||n==="BOM & Financials";const active=(page==="inputs"&&n==="Inputs")||(page==="bom"&&n==="BOM & Financials");return <button className={active?"active":""} key={n} onClick={()=>ready?setPage(n==="Inputs"?"inputs":"bom"):notifyUnderDevelopment(n)}><span>{n}</span>{!ready&&<UdevBadge/>}</button>})}<button className="home" onClick={()=>setPage("landing")}>← Landing page</button></aside><div className="work"><header><span>ACME AI Initiative / Scenario 1</span><div><button>Guided Mode</button><button onClick={()=>notifyUnderDevelopment("Expert Mode")}>Expert Mode <UdevBadge/></button><span className="avatar">AS</span></div></header>{children}</div></div>}
